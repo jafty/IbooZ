@@ -17,7 +17,7 @@ class Event(models.Model):
 	bonus_place = models.CharField(default="Sonette, bâtiment, position GPS...", max_length=200)
 	description = models.TextField()
 	address = models.CharField(max_length=500)
-	picture = models.ImageField(upload_to="events", max_length=100)
+	picture = models.ImageField(upload_to="images/events", max_length=100)
 
 
 
