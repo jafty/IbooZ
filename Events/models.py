@@ -40,6 +40,7 @@ class Notification(models.Model):
 	sender = models.ForeignKey('auth.User', related_name="request_sender", on_delete=models.PROTECT)
 	receiver = models.ForeignKey('auth.User', related_name="request_receiver", on_delete=models.PROTECT)
 	msg_content = models.TextField()
+	test = models.BooleanField(default=False)
 
 	def __str__(self):
 		return self.sender.username
