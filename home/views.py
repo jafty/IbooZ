@@ -39,7 +39,7 @@ def register(request):
 			email=form.cleaned_data['email']
 			)
 			events = Event.objects.all()
-			return HttpResponseRedirect(reverse('index'))
+			return HttpResponseRedirect(reverse('login'))
 	else:
 		form = RegistrationForm()
 	return render(request, 'home/register.html', {'form':form})
