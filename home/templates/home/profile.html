@@ -16,7 +16,7 @@
 			<div class="col s12 m4 l4">
 				<div class="card">
 					<div class="card-image">
-						<img class="centered-and-cropped" height=300 src="{% if user_profile.user.socialaccount_set.all.0.get_avatar_url %} {{ user_profile.user.socialaccount_set.all.0.get_avatar_url }}{% else %}{{ MEDIA_URL }}images/{{ profile.profile_pic }}{% endif %}">
+						<img class="centered-and-cropped" height=300 src="{% if user_profile.user.socialaccount_set.all.0.get_avatar_url %} {{ user_profile.user.socialaccount_set.all.0.get_avatar_url }}{% else %}{{ MEDIA_URL }}{{ profile.profile_pic }}{% endif %}">
 						<span class="card-title">{{ profile.user.username }}</span>
 						{% if my_profile %}
 						<a href="{% url 'edit_profile' %}" class="btn-floating black-text halfway-fab waves-effect waves-light yellow accent-3"><i style="color: black !important;" class="material-icons">edit</i></a>
