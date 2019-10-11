@@ -1,0 +1,35 @@
+{% extends 'home/base.html' %}
+
+
+{% block content %}
+
+<div class="hero-image">
+  <div class="hero-text">
+	<h1>Inscription</h1>
+  </div>
+</div>
+<main>
+	<div class="container">
+		<div class="col s12 l6 offset-l3">
+			<div class="card-panel">
+
+				<form method="post" class="post-form" enctype="multipart/form-data">
+							{% csrf_token %}
+							{{ form.as_p }}
+							<div class="col-md-12 center-block">
+								<button id="singlebutton" name="singlebutton" type="submit" class="waves-effect  pink accent-3 waves-light btn">GO</button>
+							</div>
+						<p><b>Vous avez déjà un compte ? Cliquez <a href='/login'>ici</a></b></p>
+						<p>En vous inscrivant, vous acceptez nos conditions générales d'utilisation.</p>
+				</form>
+			</div>
+		</div>
+	</div>
+</main>
+
+
+
+
+					{% endblock %}
+
+

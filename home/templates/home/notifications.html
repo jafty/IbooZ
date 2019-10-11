@@ -1,0 +1,66 @@
+{% extends 'home/base.html' %}
+
+
+{% block content %}
+
+<div class="hero-image">
+  <div class="hero-text">
+	<h1>Notifications</h1>
+  </div>
+</div>
+<main>
+			<div class="container">
+
+				{% for m in notifications %}
+					<div class="block">
+						{% if m.category == 'DM' %}
+						<div class="row event-block">
+							<div class="col l2"></div>
+							<div class="col l2 s12">
+									<img class="centered-and-cropped" width=30 src="{{ MEDIA_URL }}images/{{ m.sender.profile.profile_pic }}" />
+								<p class="username"><b>{{ m.sender.username }}</b></p>
+							</div>
+							<div class="col l5 m7 s7 block-border-left">
+								<p><b><a href="{% url 'profile' username=m.sender.username %}">{{ m.sender.username }}</a> souhaite participer à l'évènement {{ m.event.title }}</b></p>
+
+								<p><a href="{% url 'accept_event_request' cand=m.sender.username pk=m.event.pk %}">Accepter</a></p>
+								<p><a href="{% url 'deny_event_request' cand=m.sender.username pk=m.event.pk %}">Refuser</a></p>
+							</div>
+
+						</div>
+						<hr>
+						{% elif m.category == 'AC' %}
+						<div class="row event-block">
+							<div class="col l2"></div>
+							<div class="col l2 s12">
+									<img class="centered-and-cropped" width=30 src="{{ MEDIA_URL }}images/{{ m.sender.profile.profile_pic }}" />
+								<p class="username"><b>{{ m.sender.username }}</b></p>
+							</div>
+							<div class="col l5 m7 s7 block-border-left">
+								<p><b><a href="{% url 'profile' username=m.sender.username %}">{{ m.sender.username }}</a> a accepté votre demande pour {{ m.event.title }}.</b></p>
+								<p><b>Adresse :</b> {{ m.event.address }}</p>
+							</div>
+						</div>
+						<hr>
+						{% else %}
+						<div class="row event-block">
+							<div class="col l2"></div>
+							<div class="col l2 s12">
+									<img class="centered-and-cropped" width=30 src="{{ MEDIA_URL }}images/{{ m.sender.profile.profile_pic }}" />
+								<p class="username"><b>{{ m.sender.username }}</b></p>
+							</div>
+							<div class="col l5 m7 s7 block-border-left">
+								<p><a href="{% url 'profile' username=m.sender.username %}">{{ m.sender.username }}</a> a refusé votre demande pour {{ m.event.title }}</p>
+								<p>Votre carte sera re-créditée dans les jours à venir.</p>
+							</div>
+						</div>
+						<hr>
+
+						{% endif %}
+
+					</div>
+				{% endfor %}
+
+		</div>
+</main>
+{% endblock %}

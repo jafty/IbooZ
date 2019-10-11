@@ -1,0 +1,16 @@
+{% block subject %}"{{ event_name }}" avec {{ username }} le {{ event_date }}{% endblock %}
+{% block plain %}
+  Salut {{receiver}},
+  
+  {{username}} organise l'événement " {{ event_name }} " le {{ event_date }}.
+	
+	On espère que tu seras présent, sinon, sache que tu peux toi aussi organiser ton événement et rencontrer plein de monde en cliquant sur le lien ci-dessous : 
+	
+	https://ibooproject.fr/events/new
+  
+  À très bientôt 
+  
+  
+  L'équipe Iboo
+
+{% endblock %}

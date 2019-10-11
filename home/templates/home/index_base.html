@@ -1,0 +1,78 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+		<style>
+			@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+		</style>
+        <meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, maximum-scale=1.0, initial-scale=1.0, user-scalable=no" />
+        <title>Iboo - Trouve une soirée privée à Toulouse</title>
+		<link rel="stylesheet" type="text/css" href="{% static 'accueil/style.css' %}" />
+    </head>
+
+
+    <body>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-96525907-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+		<div class="wrapper_index">
+			<div id="nav">
+					<a href="/"><img src="http://i.imgur.com/wEq1OuN.png" height="45" alt="logo_iboo" id="logo" /></a>
+					 <ul>
+
+
+
+
+						{% if user.is_authenticated %}
+
+							<li><a href="/logout">Déconnexion</a></li>
+
+							<li><a href="/events">Événements</a></li>
+
+							<li><a href="/profile">Profil</a></li>
+
+
+
+							<li><a href="/events/messagerie">Messagerie</a></li>
+						{% else %}
+							<li><a href="/register">Inscription</a></li>
+
+							<li><a href="/login">Connexion</a></li>
+						{% endif %}
+
+					 </ul>
+
+			</div>
+
+
+		<div id="content">
+
+				{% block content %}
+				{% endblock %}
+		</div>
+
+			<div id='footer'>
+
+			<p>Iboo - Version beta</p>
+			<p><a href="{% url 'mode_emploi' %}">Conditions Générales d'Utilisation</a></p>
+
+
+			</div>
+		</div>
+    </body>
+
+</html>

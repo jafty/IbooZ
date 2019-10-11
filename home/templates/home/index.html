@@ -1,0 +1,91 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+<div class="index-hero">
+	<div class="container">
+		<div class="row">
+			<div class="col s12 m8 offset-m2 l8 offset-l2">
+				<div class="index-hero-text">
+					<h1 class="big-title">FAIS LA FÊTE CHEZ TES VOISINS</h1>
+					<div class="row">
+						<div class="col s12 l12">
+							<p style="margin-top: 10px; font-weight: 500; font-size: 2%;"><a href="{% url 'event_list' %}"  class="waves-effect yellow darken-1 btn-large accent-3 black-text btn-header waves-light btn"> Trouver un événement</a></p>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<main>
+
+
+<div class="green_block_center">
+	<div class="container">
+
+		<div class="row">
+			<div class="col s12">
+				<div class="section">
+					<h2 style="margin-bottom: 60px;" class="big-subtitle">Pourquoi Utiliser Iboo ?</h2>
+
+					<div class="col s12 l4">
+						<div>
+							<img src="https://images.pexels.com/photos/452742/pexels-photo-452742.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb" alt="" class="centered-and-cropped middle_img" width="200" height="200" style="border-radius:50%;">
+						</div>
+						<h4 class="yellow-text light-subtitle text-accent-2">Varie tes sorties</h4>
+						<p class="content-p; margin-top: 35px;">Accède à des événements uniques que tu ne pourras trouver nulle-part ailleurs.</p>
+					</div>
+					<div class="col s12 l4">
+						<div>
+							<img src="https://images.pexels.com/photos/9660/business-money-pink-coins.jpg?w=1260&h=750&auto=compress&cs=tinysrgb" alt="" class="centered-and-cropped middle_img" width="200" height="200" style="border-radius:50%;">
+						</div>
+						<h4 class="yellow-text light-subtitle text-accent-2">Économise ton argent</h4>
+						<p class="content-p;  margin-top: 35px;">Parce qu'un bon vieil apéro en appartement revient toujours moins cher qu'une sortie en boîte.</p>
+					</div>
+					<div class="col s12 l4">
+						<div>
+							<img src="{{ MEDIA_URL }}images/home/nouvelles-rencontres.jpg" alt="" class="centered-and-cropped middle_img" width="200" height="200" style="border-radius:50%;">
+						</div>
+						<h4 class="yellow-text light-subtitle text-accent-2">Fais de nouvelles rencontres</h4>
+						<p class="content-p;  margin-top: 35px;">Profite de ces soirées pour t'éclater et étendre ton cercle social. Tes futurs "partners in crime" sont déjà là !</p>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="block1">
+	<div class="container">
+		<h2 class="pink-text text-accent-3 big-subtitle">Ils Ont Testé</h2>
+		<div class="row">
+			<div class="col s12 l4">
+				<p><img src="{{ MEDIA_URL }}images/home/victor.jpg" class="big_circle circle"></p>
+				<h5 class="pink-text text-accent-3"><b>Victor</b></h5>
+				<p class="content-p">"J'ai passé une très bonne soirée en compagnie des autres membres du site, et je suis prêt à en refaire d'autres !"</p>
+			</div>
+			<div class="col s12 l4">
+
+				<p><img src="{{ MEDIA_URL }}images/home/matilda.jpg" class="big_circle circle"></p>
+				<h5 class="pink-text text-accent-3"><b>Matilda</b></h5>
+				<p class="content-p">"Iboo Project m'a permis de passer des soirées hors du commun tout en rencontrant de nouvelles personnes. Super concept."</p>
+			</div>
+			<div class="col s12 l4">
+				<p><img src="{{ MEDIA_URL }}images/home/julien.jpg" class="big_circle circle"></p>
+				<h5 class="pink-text text-accent-3"><b>Julien</b></h5>
+				<p class="content-p">"J'ai participé à deux soirées Iboo et c'était du très lourd à chaque fois. Je pense organiser la prochaine..."</p>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+
+</main>
+
+
+{% endblock %}

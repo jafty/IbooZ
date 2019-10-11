@@ -1,0 +1,332 @@
+body
+{
+	background-color: white;
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+  }
+
+  main {
+	flex: 1 0 auto;
+  }
+
+.title-center
+{
+	text-align: center;
+}
+
+.blue_champagne
+{
+	background-image: url("https://i.imgur.com/hU3pq0x.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding-left: 25px;
+	padding-right: 25px;
+
+}
+.big-p
+{
+	font-size: 20px;
+	font-weight: 500;
+}
+
+.big-p1
+{
+	font-size: 40px;
+	font-weight: 900;
+}
+
+.no-decoration
+{
+	color: black;
+}
+
+a.no-decoration:hover
+{
+	color: #ffd600;
+}
+
+.btn-card
+{
+	width: 160px;
+}
+
+.nav_down
+{
+	background-color: #d81b60;  /* fallback for old browsers */
+
+}
+
+h1
+{
+	font-weight: 500;
+}
+
+.hero-image {
+	/* The image used */
+	/* background: #4dd0e1;
+	background: -webkit-linear-gradient(to bottom, #d81b60, #e91e63);
+	background: linear-gradient(to bottom, #d81b60, #e91e63); */
+	background-image: url("../../images/home/hero-image.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	font-weight: 900;
+	text-align: center;
+	padding-bottom: 50px;
+	padding-top: 70px;
+	position: relative;
+	margin-bottom: 50px;
+	height: 300px;
+}
+
+.card-gradient
+{
+	background: #4dd0e1;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to down, #e5336b, #e633af) !important;  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to down, #e5336b, #e633af) !important; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.card-gradient a
+{
+   color: white !important;
+}
+
+
+.black_a
+{
+	color: white;
+	font-weight: 300;
+	font-size: 17px;
+}
+.centered-and-cropped
+{
+	object-fit: cover;
+	border-radius: 50%;
+}
+
+/* Place text in the middle of the image */
+.hero-text {
+	text-align: center;
+	color: white;
+	margin-top: 60px;
+
+}
+
+.index-hero {
+	/* The image used */
+	background-image: url("../../images/index-hero.jpg");
+
+	/* Set a specific height */
+	min-height: 100vh;
+
+	/* Position and center the image to scale nicely on all screens */
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+}
+
+.index-hero2 {
+	/* The image used */
+	background-image: url("https://i.imgur.com/JTeGUOK.jpg");
+
+	/* Set a specific height */
+	min-height: 100vh;
+
+	/* Position and center the image to scale nicely on all screens */
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+/* Place text in the middle of the image */
+.index-hero-text {
+	text-align: center;
+	color: white;
+	margin-top: 39vh;
+}
+
+
+
+.big-title
+{
+	font-weight: 900;
+	font-size: 4.0em;
+}
+
+.middle img.middle_img{
+	 vertical-align: middle;
+}
+
+.big-subtitle
+{
+	font-weight: 500;
+	font-size: 50px;
+}
+
+.material-icons {
+	text-rendering: optimizeLegibility;
+}
+
+
+
+
+.navbar-fixed {position: absolute;z-index:999999999;}
+
+.navbar-fixed.scrolled {
+  background-color: #fff !important;
+  transition: background-color 200ms linear;
+}
+
+.big_circle {
+  object-fit: cover;
+  border-radius:50%;
+  width: 170px;
+  height: 170px;
+}
+
+.little_circle {
+  object-fit: cover;
+  border-radius:50%;
+  width: 40px;
+  height: 40px;
+}
+
+.nav_down a:hover
+{
+	color: yellow;
+}
+
+
+.block1
+{
+/*    #b2ebf2*/
+	background-color: white;
+	text-align: center;
+	padding-bottom: 50px;
+	padding-top: 50px;
+}
+
+.light-subtitle
+{
+	font-weight: 400;
+	font-size: 25px;
+}
+
+.content-p
+{
+	font-weight: 400;
+	font-size: 17px;
+}
+
+.green_block
+{
+/*    #b2ebf2*/
+	background-color: #e91e63;
+	color: black;
+	padding-bottom: 50px;
+	padding-top: 50px;
+}
+
+
+.green_block_center
+{
+/*    #b2ebf2*/
+	background-color: #e5336b;
+	color: white;
+	text-align: center;
+	padding-bottom: 50px;
+	padding-top: 50px;
+}
+
+.block_party_money
+{
+/*    #b2ebf2*/
+	background-image: url(../../images/block_party_money.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-color: #1de9b6;
+	color: #1a1a24;
+	padding-bottom: 50px;
+	padding-top: 50px;
+}
+
+
+
+
+.material-icons {
+  vertical-align: middle !important;
+  padding-bottom: 3px;
+  margin-right: 10px;
+}
+
+.logo {
+	display: inline-block;
+	height: 100%;
+}
+
+.logo>img {
+	vertical-align: middle
+}
+
+
+
+.block2
+{
+/*    background-color: #ff7043;*/
+	/* background-image: url("https://i.imgur.com/QixoevZ.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover; */
+	 background: #4dd0e1;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to bottom, #e91e63,  #fff9c4 );  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to bottom, #e91e63, #fff9c4 ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	text-align: center;
+	padding-bottom: 50px;
+	padding-top: 50px;
+}
+
+.black-label label
+{
+	color: black;
+	font-weight: bold;
+	font-size: 15px;
+
+}
+
+hr.style1{
+	border-top: 1px solid #8c8b8b;
+}
+
+.block_logos
+{
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 0px;
+	background-color: #eeeeee;
+	width: 100%;
+}
+
+.material-icons.md-18 {
+font-size: 18px !important;
+height: 18px !important;
+width: 18px !important;
+}
+.material-icons.md-24 {
+font-size: 24px !important;
+height: 24px !important;
+width: 24px !important;
+}
+.material-icons.md-36 {
+font-size: 36px !important;
+height: 36px !important;
+width: 36px !important;
+}
+.material-icons.md-48 {
+font-size: 48px !important;
+height: 48px !important;
+width: 48px !important;
+}

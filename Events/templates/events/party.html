@@ -1,0 +1,65 @@
+{% extends 'accueil/base.html' %}
+{% load widget_tweaks %}
+
+{% block title %}Iboo - Crée ta soirée{% endblock %}
+
+{% block content %}
+
+<div class="index-hero2">
+  <div class="container">
+    <div class="row">
+        <div class="col s12 m8 offset-m2 l6 offset-l3">
+            <div class="index-hero-text">
+                <h1 style="margin-top: 30vh;">CRÉE L'ÉVÉNEMENT</h1>
+                <h5><b>Gagne de l'argent tout en organisant tes propres soirées</b></h5>
+                <p><a href="{% url 'event_new' %}/#go" class="waves-effect pink accent-3 btn-large accent-3 white-text btn-header text-accent-3 waves-light btn"><b>Démarrer</b></a></p>
+                <div id="go"></div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<main>
+    <div class="green_block">
+        <div class="container">
+
+        	<div class="row">
+        	    <div class="col s12">
+        	        <div class="section">
+                        <h4>CRÉE TA SOIRÉE</h4>
+                        <p>Tu adores organiser des soirées à ton image, mais tu as aussi peur de dépenser toutes tes maigres économies ? Tu as peur que n'importe qui débarque chez toi et retourne tout ton appartement ?</p>
+                        <p>Sois sans crainte. Grâce à Iboo, vérifie toutes les personnes qui désirent participer à ton événement. Seules celles que tu acceptes auront accès à ton adresse.</p>
+                        <p>Fixe une participation aux frais que tes invités seront obligés de payer avant de connaître ton adresse. L'argent sera automatiquement transféré sur ton compte bancaire. Lance-toi !</p>
+                     </div>
+                     <p style="margin-top: 30px;"><a href="{% url 'event_new' %}" class="waves-effect pink accent-3 btn-large accent-3 white-text btn-header text-accent-3 waves-light btn"><b>Je me lance</b></a></p>
+
+        	    </div>
+        	</div>
+        </div>
+    </div>
+    <div class="block_party_money">
+        <div class="container">
+
+        	<div class="row">
+        	    <div class="col s12 l6">
+        	        <div class="section">
+                        <h4 class="pink-text text-accent-3">COMBIEN JE PEUX GAGNER ?</h4>
+                        <p>Prenons l'exemple suivant :</p>
+                        <ul>
+                            <li><i class="teal-text text-accent-2 valign accent-2 material-icons">check_circle</i>Organise un événement et fixe le prix à 15€.</li>
+                            <li><i class="teal-text text-accent-2 material-icons">check_circle</i>Dépense 150€ en boissons et nourriture.</li>
+                            <li><i class="teal-text text-accent-2 material-icons">check_circle</i>Invite 15 personnes.</li>
+                            <li><i class="teal-text text-accent-2 material-icons">check_circle</i>Répète l'expérience 4 fois par mois.</li>
+                        </ul>
+                    <p style="margin-top: 30px;"><b>En faisant cela, tu fais un bénéfice net de 300€. Tu n'as donc aucune excuse pour ne pas organiser tes propres soirées !</b></p>
+                    <p>Tes informations sont protégées : ton adresse n'est dévoilée que si tu acceptes les gens qui veulent participer à ta soirée, et l'argent est transféré directement dans ton compte grâce à notre partenaire Stripe.</p>
+                    <p style="margin-top: 30px;"><a href="{% url 'event_new' %}" class="waves-effect pink accent-3 btn-large accent-3 white-text btn-header text-accent-3 waves-light btn"><b>J'organise ma soirée</b></a></p>
+                     </div>
+        	    </div>
+        	</div>
+        </div>
+    </div>
+
+</main>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% block subject %}Vous avez été accepté(e) à l'événement {{ event_name }}{% endblock %}
+{% block plain %}
+  Salut {{username}},
+  
+  Tu as été accepté(e) à l'événement {{ event_name }}. Voici l'adresse : {{ adress }}.
+  
+  Amuse-toi bien !
+  
+  
+  L'équipe Iboo
+
+{% endblock %}

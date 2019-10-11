@@ -1,0 +1,153 @@
+body
+{
+    background-color: #eeeeee;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+
+
+.hero-image {
+    /* The image used */
+   background: #4dd0e1;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #0197f6, #C200FB);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #0197f6, #C200FB); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    text-align: center;
+    padding-bottom: 50px;
+    padding-top: 50px;
+    position: relative;
+    margin-bottom: 50px;
+    height: 250px;
+}
+
+.card-gradient
+{
+    background: #4dd0e1;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #0197f6, #C200FB) !important;  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #0197f6, #C200FB) !important; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.card-gradient a
+{
+   color: white !important;
+}
+
+
+.black_a
+{
+    color: #ff4081;
+    font-weight: bold;
+    font-size: 17px;
+}
+.centered-and-cropped
+{
+    object-fit: cover;
+}
+
+/* Place text in the middle of the image */
+.hero-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    
+}
+
+.index-hero {
+    /* The image used */
+    background-image: url("https://i.imgur.com/b5nOSP2.jpg");
+
+    /* Set a specific height */
+    height: 100vh;
+
+    /* Position and center the image to scale nicely on all screens */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+/* Place text in the middle of the image */
+.index-hero-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    
+}
+
+
+.navbar-fixed {position: absolute;z-index:999999999;}
+
+.navbar-fixed.scrolled {
+  background-color: #fff !important;
+  transition: background-color 200ms linear;
+}
+
+.big_circle {
+  object-fit: cover;
+  border-radius:50%;
+  width: 170px;
+  height: 170px;
+}
+
+
+
+.block1
+{
+/*    #b2ebf2*/
+    background-color: white;
+    text-align: center;
+    padding-bottom: 50px;
+    padding-top: 50px;
+}
+
+.block2
+{
+/*    background-color: #ff7043;*/
+    background: #4dd0e1;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #0197f6, #C200FB); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #0197f6, #C200FB); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    text-align: center;
+    padding-bottom: 50px;
+    padding-top: 50px;
+}
+
+hr.style1{
+	border-top: 1px solid #8c8b8b;
+}
+
+.block_logos
+{
+    text-align: center;
+    padding-top: 20px;
+}
+
+.material-icons.md-18 {
+font-size: 18px !important;
+height: 18px !important;
+width: 18px !important;
+}
+.material-icons.md-24 {
+font-size: 24px !important;
+height: 24px !important;
+width: 24px !important;
+}
+.material-icons.md-36 {
+font-size: 36px !important;
+height: 36px !important;
+width: 36px !important;
+}
+.material-icons.md-48 {
+font-size: 48px !important;
+height: 48px !important;
+width: 48px !important;
+}

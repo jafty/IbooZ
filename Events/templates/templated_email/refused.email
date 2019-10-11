@@ -1,0 +1,14 @@
+{% block subject %}Vous n'avez pas été accepté(e) à l'événement {{ event_name }}{% endblock %}
+{% block plain %}
+  Salut {{username}},
+  
+  Tu as été refusé pour l'événement {{ event_name }}. 
+  
+  Désolé. Essaie de prendre contact avec l'organisateur, ou remplis ton profil si ce n'est pas déjà fait.
+  
+  À bientôt,
+  
+  
+  L'équipe Iboo
+
+{% endblock %}

@@ -1,0 +1,86 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+
+<div class="hero-image">
+  <div class="hero-text">
+	<h1>Événements</h1>
+  </div>
+</div>
+<main>
+	<div class="container">
+		<div class="row">
+
+				<div class="col s12 l8 offset-l2">
+					<h2 style="text-align: center; margin-top: 70px;" class="pink-text text-accent-3 big-subtitle">Envie d'un Apéro ?</h2>
+					<p class="pink-text text-accent-3" style="text-align: center; font-size: 18px; font-weight: 500; margin-bottom: 45px;">Découvre les soirées en appartement proposées par nos Hôtes</p>
+				</div>
+
+
+
+			<!-- Colonne events -->
+			<div class="col s12 l12">
+				{% for e in events %}
+					{% if e.this_week %}
+						<div class="col s12 l12">
+							<div class="card">
+								<div class="card-image">
+								  <a href="{% url 'event_detail' pk=e.pk %}"><img class="centered-and-cropped" height=200 src="{{ MEDIA_URL }}images/{{ e.picture }}"></a>
+								</div>
+								<div class="card-content"  style="height: 220px;">
+									<a class="no-decoration" href="{% url 'event_detail' pk=e.pk %}"><p class="big-p1"><b>{{ e.title }}</b></p></a>
+									<p><a href="{% url "profile" username=e.author.username %}"><img src="{% if e.author.socialaccount_set.all.0.get_avatar_url %} {{ e.author.socialaccount_set.all.0.get_avatar_url }} {% else %}{{ MEDIA_URL }}images/{{ e.author.profile.profile_pic }}{% endif %}" alt="" class="centered-and-cropped" width="30" height="30" style="border-radius:50%"><b style="margin-bottom:2px;"> {{ e.author }}</a></b></p>
+									<p class="big-p"><i class="material-icons pink-text text-accent-2" >date_range</i>{{ e.date }}, {{e.hour }}</p>
+
+								</div>
+							</div>
+						</div>
+					{% else %}
+						<div class="col s12 l4">
+							<div class="card">
+								<div class="card-image">
+								  <a href="{% url 'event_detail' pk=e.pk %}"><img class="centered-and-cropped" height=200 src="{{ MEDIA_URL }}images/{{ e.picture }}"></a>
+								</div>
+								<div class="card-content"  style="height: 195px;">
+									<a class="no-decoration" href="{% url 'event_detail' pk=e.pk %}"><p class="big-p"><b>{{ e.title }}</b></p></a>
+									<p><a style="decoration: none" href="{% url 'profile' username=e.author.username %}"><img src="{% if e.author.socialaccount_set.all.0.get_avatar_url %} {{ e.author.socialaccount_set.all.0.get_avatar_url }} {% else %}{{ MEDIA_URL }}images/{{ e.author.profile.profile_pic }}{% endif %}" alt="" class="centered-and-cropped" width="30" height="30" style="border-radius:50%"><b style="margin-bottom:2px;"> {{ e.author }}</a></b></p>
+									<p class="big-p"><i class="material-icons pink-text text-accent-2" >date_range</i>{{ e.date }}</p>
+
+								</div>
+							</div>
+						</div>
+					{% endif %}
+
+				{% empty %}
+					<div class="card-panel"><p>Aucun événement n'est organisé.</p></div>
+				{% endfor %}
+			</div>
+
+
+			<div class="fixed-action-btn"><a class="btn-floating btn-large black-text waves-effect waves-light yellow accent-3" href="{% url 'event_new'  %}"><i style="color: black !important;" class="material-icons">add</i>Proposer une soirée</a></div>
+
+		</div>
+	</div>
+{% if articles.has_other_pages %}
+  <ul class="pagination">
+	{% if articles.has_previous %}
+	  <li><a href="?page={{ articles.previous_page_number }}">&laquo;</a></li>
+	{% else %}
+	  <li class="disabled"><span>&laquo;</span></li>
+	{% endif %}
+	{% for i in articles.paginator.page_range %}
+	  {% if articles.number == i %}
+		<li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+	  {% else %}
+		<li><a href="?page={{ i }}">{{ i }}</a></li>
+	  {% endif %}
+	{% endfor %}
+	{% if articles.has_next %}
+	  <li><a href="?page={{ articles.next_page_number }}">&raquo;</a></li>
+	{% else %}
+	  <li class="disabled"><span>&raquo;</span></li>
+	{% endif %}
+  </ul>
+{% endif %}
+</main>
+{% endblock %}

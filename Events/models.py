@@ -15,13 +15,9 @@ class Event(models.Model):
 	date = models.DateField(default=datetime.now)
 	hour = models.TimeField(default=datetime.now)
 	bonus_place = models.CharField(default="Sonette, bâtiment, position GPS...", max_length=200)
-	carry = models.TextField(default="Exemple : Ramenez du pain, du coca, etc... ")
-	price = models.IntegerField(default=0)
 	description = models.TextField()
 	address = models.CharField(max_length=500)
-	free = models.BooleanField(default=True)
 	picture = models.ImageField(upload_to="events", max_length=100)
-	private = models.BooleanField(default=False)
 
 
 
@@ -37,21 +33,22 @@ class Event(models.Model):
 	def __str__(self):
 		return self.title
 
-#Message envoyé lorsqu'un utilisateur souhaite se rendre à un événement
-class Request(models.Model):
-	sender = models.ForeignKey(User, related_name="request_sender", on_delete=models.PROTECT)
-	receiver = models.ForeignKey(User, related_name="request_receiver", on_delete=models.PROTECT)
-	event = models.ForeignKey(Event, related_name="request_event", on_delete=models.PROTECT)
+#Gestion des notifications
+class Notification(models.Model):
+	category = models.CharField(max_length=2);
+	event = models.ForeignKey(Event, related_name="notification_event", on_delete=models.PROTECT)
+	sender = models.ForeignKey('auth.User', related_name="request_sender", on_delete=models.PROTECT)
+	receiver = models.ForeignKey('auth.User', related_name="request_receiver", on_delete=models.PROTECT)
 	msg_content = models.TextField()
 
 	def __str__(self):
-		return self.event.title
+		return self.sender.username
+
 
 #Participant à un événement
-class Member(models.Model):
+class Participation(models.Model):
 	member = models.ForeignKey(User, related_name="member", on_delete=models.PROTECT)
 	event = models.ForeignKey(Event, related_name="member_event", on_delete=models.PROTECT)
-	paid = models.BooleanField(default=False)
 
 	def __str__(self):
 		return self.member.username
