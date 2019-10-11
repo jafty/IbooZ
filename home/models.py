@@ -10,7 +10,7 @@ from django.dispatch import receiver
 # Create your models here.
 class UserProfile(models.Model):
 	user = models.OneToOneField(User, related_name='profile', on_delete=models.PROTECT)
-	profile_pic = models.ImageField(upload_to="home", max_length=100, default="default_user.png")
+	profile_pic = models.ImageField(upload_to="home/images", max_length=100, default="default_user.png")
 	description = models.TextField(blank=True)
 	numero = models.CharField(max_length=10, blank=True)
 	age = models.CharField(max_length=3, blank=True)
