@@ -23,7 +23,7 @@ LOGIN_REDIRECT_URL='/me/profile'
 SECRET_KEY = 'd+=n7r$7%_!&9&i6y3$exy^@zv(3&(p#!5@6&6oi)=@de57(r$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1','.pythonanywhere.com']
 MEDIA_URL = '/media/'
