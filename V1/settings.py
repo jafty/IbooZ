@@ -139,13 +139,17 @@ PWA_APP_ORIENTATION = 'any'
 PWA_APP_START_URL = '/'
 PWA_APP_ICONS = [
 	{
-		'src': '/static/images/icon.png',
+		'src': '/media/icon.png',
 		'sizes': '160x160'
-	}
+	},
+	{
+		"src": "/media/splash.png",
+		"sizes": "512x512"
+  }
 ]
 PWA_APP_SPLASH_SCREEN = [
 	{
-		'src': '/static/images/icons/splash-640x1136.png',
+		'src': '/media/splash.png',
 		'media': '(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)'
 	}
 ]
