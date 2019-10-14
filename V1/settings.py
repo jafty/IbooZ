@@ -155,3 +155,5 @@ PWA_APP_SPLASH_SCREEN = [
 ]
 PWA_APP_DIR = 'ltr'
 PWA_APP_LANG = 'fr-fr'
+
+PWA_SERVICE_WORKER_PATH = os.path.join(BASE_DIR, 'media', 'serviceworker.js')
