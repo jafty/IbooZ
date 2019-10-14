@@ -24,6 +24,7 @@ urlpatterns = [
 	path('events', include('Events.urls')),
 	path('', include('home.urls')),
 	path('accounts/', include('django.contrib.auth.urls')),
+	path('', include('pwa.urls')),  # You MUST use an empty string as the URL prefix
 ]
 
 if settings.DEBUG: # new
