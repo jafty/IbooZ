@@ -25,6 +25,16 @@ body
 	padding-right: 25px;
 
 }
+
+.navbar-spacer
+{
+	margin-top: 60px;
+}
+
+.bottom-navbar-spacer
+{
+	margin-top: 90px;
+}
 .big-p
 {
 	font-size: 20px;
@@ -47,15 +57,33 @@ a.no-decoration:hover
 	color: #ffd600;
 }
 
+.card-image
+{
+	border-radius: 30px;
+}
+
 .btn-card
 {
 	width: 160px;
 }
 
-.nav_down
+h2
+{
+	font-size: 2em;
+}
+.nav-wrapper
 {
 	background-color: #d81b60;  /* fallback for old browsers */
 
+}
+
+.card-image, .card, .card-image img
+{
+	border-radius: 30px !important;
+}
+hr1
+{
+	border-top: 1px solid #8c8b8b;
 }
 
 h1
@@ -77,10 +105,16 @@ h1
 	padding-bottom: 50px;
 	padding-top: 70px;
 	position: relative;
-	margin-bottom: 50px;
+	margin-bottom: 20px;
 	height: 300px;
 }
 
+.big-btn
+{
+	width: 100%;
+	margin-bottom: 40px;
+
+}
 .card-gradient
 {
 	background: #4dd0e1;  /* fallback for old browsers */
@@ -171,7 +205,20 @@ h1
 }
 
 
+.mobmenu ul
+{
+	width: 100%;
+}
 
+.mobmenu ul li
+{
+	width: 25%;
+}
+
+.mobmenu ul li a
+{
+	text-align: center;
+}
 
 .navbar-fixed {position: absolute;z-index:999999999;}
 

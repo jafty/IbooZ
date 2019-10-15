@@ -1,9 +1,11 @@
 {% extends 'home/base.html' %}
 
-
+{% block nav_mobile %}
+Notifications
+{% endblock %}
 {% block content %}
 
-<div class="hero-image">
+<div class="hide-on-small-only hero-image">
   <div class="hero-text">
 	<h1>Notifications</h1>
   </div>
@@ -59,6 +61,8 @@
 						{% endif %}
 
 					</div>
+				{% empty %}
+				<p style="margin-top: 150px; text-align: center;">Vous n'avez reçu aucune notifications.</p>
 				{% endfor %}
 
 		</div>

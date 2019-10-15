@@ -1,52 +1,41 @@
 {% extends 'home/base.html' %}
 
+{% block nav_mobile %}
+<a href="/events"><i style="margin-left: 50px;" class="material-icons" >arrow_back</i></a>
+{% endblock %}
 
 {% block content %}
 
-<div class="hero-image">
+<div class=" hero-image" style="background-image: url({{ MEDIA_URL }}{{ event.picture }}) !important;">
   <div class="hero-text">
 	<h1>{{ event.title }}</h1>
+	  <h2>{{ event.date }}</h2>
   </div>
 </div>
 <main>
 	<div class="container">
 		<div class="row">
-			<div class="col s12 l4">
-				<div class="card">
-					<div class="card-image">
-					  <img class="centered-and-cropped" height=300 src="{% if event.author.socialaccount_set.all.0.get_avatar_url %} {{ event.author.socialaccount_set.all.0.get_avatar_url }} {% else %}{{ MEDIA_URL }}{{ event.author.profile.profile_pic }}{% endif %}">
-					  <span class="card-title">{{ profile.username }}</span>
-					</div>
-					<div class="card-content">
-						<h4><a class="no-decoration" href="{% url 'profile' username=event.author.username %}">{{ event.author.username }}</a></h4>
-						<p><b>Âge :</b>{{ event.author.profile.age }}</p>
-						<p><b>Présentation :</b>{{ event.author.profile.description }}</p>
-						<p><b>Profession :</b>{{ event.author.profile.profession }}</p>
-					</div>
-				</div>
+			<div class="col s12 l8 offset-l2">
+				{% if event.is_past_due %}
+				<p>Cet événement a déjà eu lieu</p>
+				{% else %}
+				<a class="waves-effect yellow accent-3 black-text waves-light btn big-btn" href="{% url 'event_request' pk=event.pk %}" class="button"><b>PARTICIPE</b></a>
+
+
+				{% endif %}
+				<a style="color: black;" href="{% url 'profile' username=event.author.username %}"><img src="{{ MEDIA_URL }}{{ event.author.profile.profile_pic }}" alt="" class="centered-and-cropped" width="30" height="30" style="border-radius:50%; vertical-align: middle; ">
+					<span style="margin-left: 0.5em; font-size: 1em;" ><b>{{ event.author.username }}</b></span></a>
+				<hr class="hr1">
 			</div>
-			<div class="col s12 l8">
-				<div class="card">
-					<div class="card-image">
-					  <img class="centered-and-cropped" height=350 src="{{ MEDIA_URL }}{{ event.picture }}">
-					  <span class="card-title">{{ event.title }}</span>
-					</div>
-					<div class="card-content">
-						<h3><b>{{ event.title }}</b></h3>
-						<h4><i class="material-icons pink-text text-accent-2" >date_range</i>{{ event.date }}</h4>
-						<h4><i class="material-icons pink-text text-accent-2" >av_timer</i>{{ event.hour }}</h4>
-
-						<p >{{ event.description }}</p>
-
-
-						{% if event.is_past_due %}
-							<p class="pink-text text-accent-2">Cet événement a déja eu lieu</p>
-						{% else %}
-							<p style="margin-top: 20px;"><b><a class="waves-effect yellow accent-3 black-text waves-light btn" href="{% url 'event_request' pk=event.pk %}" class="button"><b>PARTICIPE</b></a></b></p>
-						{% endif %}
-					</div>
-				</div>
+			<div class="col s12 l12">
+				<h2><b>Détails</b></h2>
+				<p><b>Heure de l'événement : </b>{{ event.hour}}</p>
+				<p><b>Date : </b>{{ event.date}}</p>
+				<p>{{ event.description }}</p>
 			</div>
+			{% if my_event %}
+			<a class="waves-effect black accent-3 white-text waves-light btn big-btn" href="{% url 'edit_my_event' pk=event.pk %}" class="button"><b>Editer mon événement</b></a>
+			{% endif %}
 		</div>
 	</div>
 </main>
