@@ -15,6 +15,11 @@ body
 	text-align: center;
 }
 
+nav .brand-logo
+{
+	font-size: 1.4em !important;
+}
+
 .blue_champagne
 {
 	background-image: url("https://i.imgur.com/hU3pq0x.jpg");
@@ -28,7 +33,7 @@ body
 
 .navbar-spacer
 {
-	margin-top: 60px;
+	margin-top: 56px;
 }
 
 .bottom-navbar-spacer
@@ -69,7 +74,7 @@ a.no-decoration:hover
 
 h2
 {
-	font-size: 2em;
+	font-size: 1.4em;
 }
 .nav-wrapper
 {
@@ -79,11 +84,17 @@ h2
 
 .card-image, .card, .card-image img
 {
-	border-radius: 30px !important;
+	border-radius: 10px !important;
+	margin-left: 0px;
 }
 hr1
 {
 	border-top: 1px solid #8c8b8b;
+}
+
+.padding_zero
+{
+	padding: 0 !important;
 }
 
 h1
@@ -148,6 +159,10 @@ h1
 
 }
 
+.hero-text h1 {
+	font-size: 2em;
+
+}
 .index-hero {
 	/* The image used */
 	background-image: url("../../images/index-hero.jpg");

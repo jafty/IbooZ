@@ -1,46 +1,29 @@
 {% extends 'home/base.html' %}
 
-{% block title %}Iboo - Crée ta soirée{% endblock %}
+{% block nav_mobile %}Nouvel événement{% endblock %}
+{% block title %}Iboo - Nouvel événement{% endblock %}
 
-{% block content %}
-
-<div class="hide-on-small-only index-hero2">
-  <div class="container">
-	<div class="row">
-		<div class="col s12 m8 offset-m2 l6 offset-l3">
-			<div class="index-hero-text">
-				<h1 style="margin-top: 30vh;">SOIS PAYÉ POUR FAIRE LA FÊTE</h1>
-				<h5><b>Organise ta soirée, annonce-là et rentabilise-là</b></h5>
-				<div id="go"></div>
-			</div>
-		</div>
-	</div>
-  </div>
-</div>
 
 <main>
-	<div class="green_block">
+
+
+
+
+	{% block content %}
+	<div class="hide-on-small-only hero-image">
+		<div class="hero-text">
+			<h1>Nouvel événement</h1>
+		</div>
+	</div>
+	<main>
 		<div class="container">
-
-			<div class="row">
-				<div class="col s12 l12">
-					<div class="section">
-						<h4 style="font-weight: 900;">CRÉE TA SOIRÉE</h4>
-						<p>Tu adores organiser des soirées à ton image, mais tu as aussi peur de dépenser toutes tes maigres économies ? Tu as peur que n'importe qui débarque chez toi et retourne tout ton appartement ?</p>
-						<p>Sois sans crainte. Grâce à Iboo, vérifie toutes les personnes qui désirent participer à ton événement. Seules celles que tu acceptes auront accès à ton adresse.</p>
-						<p>Fixe une participation aux frais que tes invités seront obligés de payer avant de connaître ton adresse. L'argent sera automatiquement transféré sur ton compte bancaire. Lance-toi !</p>
-					 </div>
-				</div>
-			</div>
-
 			<div class="row">
 				<div class="col s12 l12">
 					<div class="card-panel" style="margin-top: 35px;">
 
 						<form method="post" class="post-form" enctype="multipart/form-data">
-							<h4 style="text-align: center;" class="big-subtitle">Nouvel Événement</h4>
+
 							{% csrf_token %}
-							<h5 class="big-subtitle">Informations de base</h5>
 							<p class="black-text"><label for="{{ form.picture_url.id_for_label }}"><b>{{ form.picture.label }} : </b></label>{{ form.picture }}</p>
 							<p class="black-text"><label for="{{ form.title.id_for_label }}"><b>{{ form.title.label }}</b></label>{{ form.title }}</p>
 							<p class="black-text"><label for="{{ form.address.id_for_label }}"><b>{{ form.address.label }} (l'adresse n'est dévoilée qu'aux participants que tu acceptes)</b></label>{{ form.address }}</p>
@@ -59,7 +42,6 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</main>
+	{% endblock %}
 
-</main>
-{% endblock %}

@@ -20,7 +20,7 @@ from .forms import RegistrationForm, UserProfileForm
 
 #affichage de tous les événements
 def index(request):
-	return render(request, 'home/index.html')
+	return HttpResponseRedirect('/events')
 
 #liste des événements
 def event_list(request):
@@ -56,6 +56,7 @@ def profile(request, username):
 	if current_user==profile_user:
 		my_profile=True
 	events_organized=Event.objects.filter(author=profile_user)
+	print(profile_user.username)
 	events_attended=Participation.objects.filter(member=profile_user)
 	e_count=events_organized.count()
 	if my_profile:

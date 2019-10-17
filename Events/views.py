@@ -96,6 +96,7 @@ def deny_event_request(request, pk, cand):
 @login_required
 def edit_my_event(request, pk):
 	current_user=request.user
+	event=Event.objects.get(pk=pk)
 	if current_user!=event.author:
 		HttpResponseRedirect(reverse('event_list'))
 	event = Event.objects.get(pk=pk)
@@ -107,4 +108,4 @@ def edit_my_event(request, pk):
 			return HttpResponseRedirect(reverse('my_events'))
 	else:
 		form = EventForm(instance=event)
-	return render(request, 'events/edit_my_event.html', {'form':form})
+	return render(request, 'events/edit_my_event.html', {'form':form, 'pk':pk})

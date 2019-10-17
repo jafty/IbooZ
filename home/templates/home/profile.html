@@ -3,111 +3,61 @@
 {% block nav_mobile %}Mon Compte{% endblock %}
 {% block content %}
 
-<!-- grid here -->
-<div class="hide-on-small-only hero-image">
-	<div class="hero-text">
-		<h1>Tableau de Bord</h1>
-	</div>
-</div>
+
+
 
 <main>
+	<!-- grid here -->
+	<div class=" hero-image" style="background-image: url({{ MEDIA_URL }}{{ profile.profile_pic }}) !important;">
+		<div class="hero-text">
+			<h1>{{ profile.user.username }}</h1>
+		</div>
+		{% if my_profile %}
+		<a href="{% url 'edit_profile' %}" class="btn-floating black-text halfway-fab edit-btn waves-effect waves-light yellow accent-3"><i style="color: black !important;" class="material-icons">edit</i></a>
+		{% endif %}
+	</div>
 	<div class="container">
 		<div class="row">
-			<div class="col s12 m4 l4">
-				<div class="card">
-					<div class="card-image">
-						<img class="centered-and-cropped" height=300 src="{% if user_profile.user.socialaccount_set.all.0.get_avatar_url %} {{ user_profile.user.socialaccount_set.all.0.get_avatar_url }}{% else %}{{ MEDIA_URL }}{{ profile.profile_pic }}{% endif %}">
-						<span class="card-title">{{ profile.user.username }}</span>
-						{% if my_profile %}
-						<a href="{% url 'edit_profile' %}" class="btn-floating black-text halfway-fab waves-effect waves-light yellow accent-3"><i style="color: black !important;" class="material-icons">edit</i></a>
-						{% endif %}
-					</div>
-					<div class="card-content">
-						<h2>{{ profile.user.username }}</h2>
-						<p><b>Âge : </b>{{ profile.age }} ans</p>
-						<p><b>Présentation : </b>{{ profile.description }}</p>
-						<p><b>Numéro : </b>{{ profile.numero }}</p>
-						<p><b>Profession : </b>{{ profile.profession }}</p>
-					</div>
+			<div class="col s12 l12">
+				<p><b>Âge : </b>{{ profile.age }} ans</p>
+				<p><b>Présentation : </b>{{ profile.description }}</p>
+				<p><b>Numéro : </b>{{ profile.numero }}</p>
+				<p><b>Profession : </b>{{ profile.profession }}</p>
+				<p><a class="pink-text" style="font-size: 10px;" href="/accounts/logout?next=/path_to_the_page">Déconnexion</a></p>
+			</div>
+			<div class="col s12 m4 l6">
+				<div class="card-panel">
+					<h2>A participé à:</h2>
+					<ul class="collection">
+						{% for e in events_attended %}
+						<li><a href="{% url 'event_detail' pk=e.pk %}">{{ e.event.title }}</a></li>
+						{% empty %}
+						<p>Je n'ai participé à aucun événement</p>
+						{% endfor %}
+					</ul>
+
 				</div>
 			</div>
-			<div class="col s12 m8 l8">
-				<div class="row">
-					{% if my_profile %}
-					<div class="col l12">
-						<div class="card-panel">
-							<h2>Notifications</h2>
-							<ul class="collection">
-								{% for m in notifications %}
-								<li><a href="{% url 'event_detail' pk=m.event.pk %}"><b>Soirée :</b> {{ m.event.title }}</a></li>
-								{% if m.category == "AC" %}
-								<li>Tu as été accepté(e) à la soirée {{ m.event.title }} !</li>
-								<li><b>Adresse :</b>{{ m.event.address }} </li>
-								<li>{{ m.event.bonus_place }} </li>
-								<li>----------</li>
-								{% elif m.category == "DM" %}
-								<li><b><a href="{% url 'profile' username=m.sender.username %}">{{ m.sender.username }}</a> souhaite participer à l'évènement {{ m.event.title }}</b></li>
-								<li><a href="{% url 'accept_event_request' cand=m.sender.username pk=m.event.pk %}">Accepter</a></li>
-								<li><a href="{% url 'deny_event_request' cand=m.sender.username pk=m.event.pk %}">Refuser</a></li>
-								<li>----------</li>
-								{% else %}
-								<li><a href="{% url 'profile' username=m.sender.username %}">{{ m.sender.username }}</a> a refusé votre demande pour {{ m.event.title }}</li>
-								<li>Vous serez remboursé.</li>
-								<li>----------</li>
-								{% endif %}
-								{% empty %}
-								<p>Aucune notification</p>
-								{% endfor %}
-							</ul>
-						</div>
+			<div class="col s12 m4 l6">
+				<div class="card-panel">
+					<h2>A organisé:</h2>
+					<ul class="collection">
+						{% for ev in events_organized %}
+						<li><a href="{% url 'event_detail' pk=ev.pk %}">{{ ev.title }}</a></li>
+						{% empty %}
+						<p>Je n'ai organisé aucun événement</p>
+						{% endfor %}
+					</ul>
 
-					</div>
-					{% endif %}
 				</div>
-
-				<div class="row">
-					<div class="col l12">
-						<div class="card-panel">
-							<h2>J'y ai participé:</h2>
-							<ul class="collection">
-								{% for e in events_attended %}
-								<li><a href="{% url 'event_detail' pk=e.pk %}">{{ e.event.title }}</a></li>
-								{% empty %}
-								<p>Je n'ai participé à aucun événement</p>
-								{% endfor %}
-							</ul>
-						</div>
-
-					</div>
-				</div>
-
-				<div class="row">
-					<div class="col l12">
-						<div class="card-panel">
-							<h2>J'ai organisé:</h2>
-							<ul class="collection">
-								{% for e in events_organized %}
-								<li><a href="{% url 'event_detail' pk=e.pk %}">{{ e.title }}</a></li>
-								{% empty %}
-								<p>Je n'ai organisé aucun événement</p>
-								{% endfor %}
-							</ul>
-						</div>
-
-					</div>
-				</div>
-
 
 			</div>
-
-
-
-
-
 		</div>
+
+
+
+
 	</div>
-
-
 </main>
 
 

@@ -1,10 +1,10 @@
-{% extends 'accueil/base.html' %}
+{% extends 'home/base.html' %}
 
-
-{% load app_filters %}
+{% block nav_mobile %}<a href="/events/{{ pk }}"><i style="margin-left: 50px;" class="material-icons" >arrow_back</i></a>{% endblock %}
 
 
 {% block content %}
+
 
 <div class="hide-on-small-only hero-image">
   <div class="hero-text">
