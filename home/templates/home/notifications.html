@@ -25,6 +25,7 @@ Notifications
 							</div>
 							<div class="col l5 m7 s7 block-border-left">
 								<p><b><a href="{% url 'profile' username=m.sender.username %}">{{ m.sender.username }}</a> souhaite participer à l'évènement {{ m.event.title }}</b></p>
+								<p>{{ m.msg_content }}</p>
 
 								<p><a href="{% url 'accept_event_request' cand=m.sender.username pk=m.event.pk %}">Accepter</a></p>
 								<p><a href="{% url 'deny_event_request' cand=m.sender.username pk=m.event.pk %}">Refuser</a></p>
