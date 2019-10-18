@@ -1,6 +1,6 @@
 {% extends 'home/base.html' %}
 
-{% block nav_mobile %}Mon Compte{% endblock %}
+{% block nav_mobile %}{% if my_profile %}Mon Compte{% else %}{{ profile.user.username }}{% endif %}{% endblock %}
 {% block content %}
 
 
