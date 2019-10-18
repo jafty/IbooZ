@@ -47,6 +47,8 @@
 					'event_callback': function(){document.location = url;}
 				});
 			}
+
+
 		</script>
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-96525907-2"></script>
 		<script>
@@ -96,68 +98,17 @@
 				});
 			});
 		</script>
+		<script>
+			$(window).load(function() {
+				// do something
+				$(".lds-dual-ring").hide();
+			});
+		</script>
 		<div class="navbar-fixed hide-on-small-only nav-down" id="mynav">
-	<nav>
-	  <div class="nav-wrapper ">
-		<a href="/" class="brand-logo" ><img style="margin-top: 5px;" width=100 src="{{ MEDIA_URL }}images/home/logo.png"></a>
-		<ul class="right hide-on-med-and-down">
-			<li><a class="black_a" href="/events/">Trouver une soirée</a></li>
-			{% if user.is_authenticated %}
-			<li><a class="black_a" href="{% url 'profile' username='me' %}">Tableau de bord</a></li>
-			<li><a class="black_a" href="{% url 'notifications' %}">Notifications</a></li>
-			<li><a class="black_a" href="{% url 'logout' %}?next={% url 'index' %}">Déconnexion</a></li>
-			{% else %}
-			<li><a class="black_a" href="/register">Inscription</a></li>
-			<li><a class="black_a" href="{% url 'login' %}">Connexion</a></li>
-			{% endif %}
-			<li><a class="waves-effect yellow accent-2 black-text waves-light btn" href="/events/new"><b>Devenir hôte</b></a></li>
-		</ul>
-	  </div>
-	</nav>
-		</div>
-
-		<!-- Affichage du menu bottom version mobile -->
-		<div class="navbar-fixed mobmenu hide-on-med-and-up nav-down"  style="bottom:0;">
 			<nav>
-			  <div class="nav-wrapper">
-				<a href="#!" class="hide-on-med-and-down brand-logo">Logo</a>
-				<ul class="right ">
-				  <li><a class="black_a" href="/events/"><i class="material-icons">calendar_today</i></a></li>
-					{% if user.is_authenticated %}
-					<li><a class="black_a" href="{% url 'profile' username='me' %}"><i class="material-icons">person</i></a></li>
-					<li><a class="black_a" href="{% url 'notifications' %}"><i class="material-icons">notifications</i></a></li>
-					{% else %}
-					<li><a class="black_a" href="/register"><i class="material-icons">person_add</i></a></li>
-					<li><a class="black_a" href="{% url 'login' %}"><i class="material-icons">person</i></a></li>
-					{% endif %}
-					<li><a class="black_a" href="/events/new"><b><i class="material-icons">add_circle</i></b></a></li>
-				</ul>
-			  </div>
-			</nav>
-		  </div>
-
-		<div class="navbar-fixed hide-on-med-and-up nav-down">
-			<nav>
-			  <div class="nav-wrapper">
-				<a href="#!" class=" brand-logo">{% block nav_mobile %}{% endblock %}</a>
-
-			  </div>
-			</nav>
-		  </div>
-
-		<div class="navbar-spacer"></div>
-
-
-
-
-
-		<!--<div class="navbar-fixed " id="mynav" >
-			<nav class="transparent z-depth-0">
-				<div class="nav-wrapper  nav_down">
-					<a  href="/" style="font-weight: bold; margin-left: 15px;" class="brand-logo logo text-accent-3 pink-text"><img style="margin-top: 5px;" width=100 src="{{ MEDIA_URL }}images/home/logo.png"></a>
-					<a href="#" data-activates="mobile-demo" class="white-text text-accent-3 button-collapse"><i class="material-icons">menu</i></a>
+				<div class="nav-wrapper ">
+					<a href="/" class="brand-logo" ><img style="margin-top: 5px;" width=100 src="{{ MEDIA_URL }}images/home/logo.png"></a>
 					<ul class="right hide-on-med-and-down">
-
 						<li><a class="black_a" href="/events/">Trouver une soirée</a></li>
 						{% if user.is_authenticated %}
 						<li><a class="black_a" href="{% url 'profile' username='me' %}">Tableau de bord</a></li>
@@ -169,27 +120,85 @@
 						{% endif %}
 						<li><a class="waves-effect yellow accent-2 black-text waves-light btn" href="/events/new"><b>Devenir hôte</b></a></li>
 					</ul>
-					<ul id="mobile-demo" class="side-nav">
-						<li><a class="waves-effect yellow accent-3 waves-light btn" href="/events/new"><b>Devenir hôte</b></a></li>
-						<li><a class="black_a" href="/events/">Trouver une soirée</a></li>
+				</div>
+			</nav>
+		</div>
+
+		<!-- Affichage du menu bottom version mobile -->
+		<div class="navbar-fixed mobmenu hide-on-med-and-up nav-down"  style="bottom:0;">
+			<nav>
+				<div class="nav-wrapper">
+					<a href="#!" class="hide-on-med-and-down brand-logo">Logo</a>
+					<ul class="right ">
+						<li><a class="black_a" href="/events/"><i class="material-icons">calendar_today</i></a></li>
 						{% if user.is_authenticated %}
-						<li><a class="black_a" href="{% url 'profile' username='me' %}">Tableau de bord</a></li>
-						<li><a class="black_a" href="{% url 'notifications' %}">Notifications</a></li>
-						<li><a class="black_a" href="{% url 'logout' %}?next={% url 'index' %}">Déconnexion</a></li>
+						<li><a class="black_a" href="{% url 'profile' username='me' %}"><i class="material-icons">person</i></a></li>
+						<li><a class="black_a" href="{% url 'notifications' %}"><i class="material-icons">notifications</i></a></li>
 						{% else %}
-						<li><a class="black_a" href="/register">Inscription</a></li>
-						<li><a class="black_a" href="/login">Connexion</a></li>
+						<li><a class="black_a" href="/register"><i class="material-icons">person_add</i></a></li>
+						<li><a class="black_a" href="{% url 'login' %}"><i class="material-icons">person</i></a></li>
 						{% endif %}
+						<li><a class="black_a" href="/events/new"><b><i class="material-icons">add_circle</i></b></a></li>
 					</ul>
 				</div>
 			</nav>
 		</div>
+
+		<div class="navbar-fixed hide-on-med-and-up nav-down">
+			<nav>
+				<div class="nav-wrapper">
+					<a href="#!" class=" brand-logo">{% block nav_mobile %}{% endblock %}</a>
+
+				</div>
+			</nav>
+		</div>
+
+		<div class="navbar-spacer"></div>
+
+
+
+
+
+		<!--<div class="navbar-fixed " id="mynav" >
+<nav class="transparent z-depth-0">
+<div class="nav-wrapper  nav_down">
+<a  href="/" style="font-weight: bold; margin-left: 15px;" class="brand-logo logo text-accent-3 pink-text"><img style="margin-top: 5px;" width=100 src="{{ MEDIA_URL }}images/home/logo.png"></a>
+<a href="#" data-activates="mobile-demo" class="white-text text-accent-3 button-collapse"><i class="material-icons">menu</i></a>
+<ul class="right hide-on-med-and-down">
+
+<li><a class="black_a" href="/events/">Trouver une soirée</a></li>
+{% if user.is_authenticated %}
+<li><a class="black_a" href="{% url 'profile' username='me' %}">Tableau de bord</a></li>
+<li><a class="black_a" href="{% url 'notifications' %}">Notifications</a></li>
+<li><a class="black_a" href="{% url 'logout' %}?next={% url 'index' %}">Déconnexion</a></li>
+{% else %}
+<li><a class="black_a" href="/register">Inscription</a></li>
+<li><a class="black_a" href="{% url 'login' %}">Connexion</a></li>
+{% endif %}
+<li><a class="waves-effect yellow accent-2 black-text waves-light btn" href="/events/new"><b>Devenir hôte</b></a></li>
+</ul>
+<ul id="mobile-demo" class="side-nav">
+<li><a class="waves-effect yellow accent-3 waves-light btn" href="/events/new"><b>Devenir hôte</b></a></li>
+<li><a class="black_a" href="/events/">Trouver une soirée</a></li>
+{% if user.is_authenticated %}
+<li><a class="black_a" href="{% url 'profile' username='me' %}">Tableau de bord</a></li>
+<li><a class="black_a" href="{% url 'notifications' %}">Notifications</a></li>
+<li><a class="black_a" href="{% url 'logout' %}?next={% url 'index' %}">Déconnexion</a></li>
+{% else %}
+<li><a class="black_a" href="/register">Inscription</a></li>
+<li><a class="black_a" href="/login">Connexion</a></li>
+{% endif %}
+</ul>
+</div>
+</nav>
+</div>
 -->
 
 
 		{% block content %}
 		{% endblock %}
 		<div class="bottom-navbar-spacer"></div>
+		<div class="lds-dual-ring"  ></div>
 		<div class="hide-on-small-only block_party_money">
 			<div class="container">
 				<div class="row">
@@ -244,9 +253,9 @@
 					</div>
 				</div>
 
-		</div>
+			</div>
 
-		<!--		<footer class="page-footer pink darken-4">
+			<!--		<footer class="page-footer pink darken-4">
 <div class="container">
 <div class="row">
 <div class="col l6 s12">
@@ -277,6 +286,6 @@
 
 
 
-	</body>
+			</body>
 
-</html>
+		</html>
