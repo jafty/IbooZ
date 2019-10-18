@@ -10,7 +10,7 @@
 	<!-- grid here -->
 	<div class=" hero-image" style="background-image: url({{ MEDIA_URL }}{{ profile.profile_pic }}) !important;">
 		<div class="hero-text">
-			<h1>{{ profile.user.username }}</h1>
+			<h1 class="very-bold">{{ profile.user.username }}</h1>
 		</div>
 		{% if my_profile %}
 		<a href="{% url 'edit_profile' %}" class="btn-floating black-text halfway-fab edit-btn waves-effect waves-light yellow accent-3"><i style="color: black !important;" class="material-icons">edit</i></a>
