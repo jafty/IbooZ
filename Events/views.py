@@ -44,7 +44,7 @@ def event_new(request):
 			event = form.save(commit=False)
 			event.author = current_user
 			event.save()
-			return render(request, 'events/event_detail.html', {'event':event})
+			return HttpResponseRedirect(reverse('event_list'))
 	else:
 		form = EventForm()
 	return render(request, 'events/event_new.html', {'form':form})
@@ -105,7 +105,7 @@ def edit_my_event(request, pk):
 		if form.is_valid():
 			event = form.save(commit=False)
 			event.save()
-			return HttpResponseRedirect(reverse('my_events'))
+			return HttpResponseRedirect(reverse('event_list'))
 	else:
 		form = EventForm(instance=event)
 	return render(request, 'events/edit_my_event.html', {'form':form, 'pk':pk})
