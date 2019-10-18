@@ -424,3 +424,20 @@ position: fixed;
 	transform: rotate(360deg);
   }
 }
+
+html
+{
+	font-family: 'Montserrat', sans-serif;
+
+}
+
+.very-bold
+{
+	font-weight: 900;
+}
+
+.card-image img
+{
+
+	filter: brightness(80%);
+}
